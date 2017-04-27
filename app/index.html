@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <title>Bluemix MEAN Starter</title>
+    <link rel="stylesheet" href="css/app.css">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.4/angular-resource.min.js"></script>
+    <script src="app.js" charset="utf-8"></script>
+    <script src="blogs/blogs.controller.js"></script>
+    <script src="blogs/blogs.model.js"></script>
+  </head>
+  <body>
+    <section>
+      <h1>Bluemix MEAN Starter</h1>
+    </section>
+    <ul>
+      <li ui-sref="blogs">Blog</li>
+    </ul>
+    <div ui-view></div>
+  </body>
+</html>

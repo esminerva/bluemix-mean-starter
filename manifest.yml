@@ -1,0 +1,13 @@
+---
+applications:
+- disk_quota: 1024M
+  name: noddie
+  domain: mybluemix.net
+  host: noddie
+  memory: 256M
+  instances: 1
+  timeout: 180
+  buildpack: sdk-for-nodejs
+  command: npm start
+  env:
+    OPENAPI_SPEC: /swagger/api

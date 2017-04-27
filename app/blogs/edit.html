@@ -1,0 +1,9 @@
+<div ng-repeat="blog in blogs">
+  <h3 ui-sref=".details(blog._id)">{{blog.title}}</h3>
+  <p>Date: {{blog.timeCreated}}</p>
+  <p>Last updated: {{blog.lastUpdated}}</p>
+  <p>{{blog.content}}</p>
+  <a ui-sref=".edit(blog._id)">Edit</a>
+  <a ng-click="deleteBlog($index)">Delete</a>
+  <hr ng-if="!$last">
+</div>

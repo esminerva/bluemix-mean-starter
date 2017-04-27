@@ -1,0 +1,25 @@
+container-name-run : "noddie-express-run"
+container-name-tools : "noddie-express-tools"
+
+host-path-run : "."
+host-path-tools : "."
+
+container-path-run : "/app"
+container-path-tools : "/app"
+
+container-port-map : "8080:8080"
+container-port-map-debug : "5858:5858"
+
+dockerfile-run : "Dockerfile"
+dockerfile-tools : "Dockerfile-tools"
+
+image-name-run : "noddie-express-run"
+image-name-tools : "noddie-express-tools"
+
+build-cmd-run : "npm install --production --unsafe-perm"
+test-cmd : "npm run test"
+build-cmd-debug : "npm install --unsafe-perm"
+
+run-cmd : ""
+debug-cmd : "npm run debug"
+stop-cmd : "npm stop"
