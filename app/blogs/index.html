@@ -1,9 +1,16 @@
-<div ng-repeat="blog in blogs">
-  <h3 ui-sref=".details({id: blog._id})">{{blog.title}}</h3>
-  <p>Date: {{blog.timeCreated}}</p>
-  <p>Last updated: {{blog.lastUpdated}}</p>
-  <p>{{blog.content}}</p>
-  <a ui-sref=".edit({id: blog._id})">Edit</a>
-  <a ng-click="deleteBlog($index)">Delete</a>
-  <hr ng-if="!$last">
+<div ui-view>
+  <div class="blog-box-wrapper">
+    <div class="blog-box new button" ng-click="newBlog()">New Post</div>
+    <div class="blog-box button" ng-repeat="blog in blogs">
+      <div class="blog-info" ng-click="showDetails(blog)">
+        <h3>{{blog.title}}</h3>
+        <p class="date">Date: {{blog.timeCreated | date}}</p>
+        <p class="date">Last updated: {{blog.lastUpdated | date}}</p>
+      </div>
+      <div class="blog-actions">
+        <div class="edit button" ng-click="editBlog(blog)">Edit</div>
+        <div class="delete button" ng-click="deleteBlog(blog, $index)">Delete</div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,3 +1,105 @@
+html {
+    height: 100%;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    display: flex;
+    background: dodgerblue;
+    padding: 10px 20px;
+}
+
+h3 {
+    margin: 0;
+    margin-bottom: 10px;
+    align-self: center;
+}
+
+p.date {
+    margin: 0;
+    color: gray;
+}
+
+ul {
+    background: lightblue;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+ul li {
+    display: flex;
+    padding: 10px 20px;
+    background: azure;
+}
+
+.homepage {
+    padding: 20px;
+}
+
+.content {
+    display: flex;
+    background: lightgray;
+    flex-direction: column;
+    flex: 1;
+}
+
+.blog-box-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blog-box {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+    border: solid 1px gray;
+    background: seashell;
+}
+
+.blog-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    padding: 20px;
+}
+
+.blog-box.new {
+    align-items: center;
+    justify-content: center;
+    background: peachpuff;
+}
+
+.blog-actions {
+    display: flex;
+    border-top: solid 1px gray;
+}
+
+.blog-actions div {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    justify-content: center;
+}
+
+.blog-actions .edit {
+    background: lightgreen;
+}
+
+.blog-actions .delete {
+    background: palevioletred;
+}
+
+.button:hover {
+    cursor: pointer;
 }

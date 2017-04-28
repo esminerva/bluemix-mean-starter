@@ -12,11 +12,13 @@
   </head>
   <body>
     <section>
-      <h1>Bluemix MEAN Starter</h1>
+      <h1 class="button" ui-sref="home">Bluemix MEAN Starter</h1>
     </section>
     <ul>
-      <li ui-sref="blogs">Blog</li>
+      <li class="button" ui-sref="blogs" ui-sref-opts="{reload: true}">Blog</li>
     </ul>
-    <div ui-view></div>
+    <div ui-view class="content">
+      <div class="homepage">^ Click on Blog to test CRUD operations in this MEAN Application</div>
+    </div>
   </body>
 </html>
