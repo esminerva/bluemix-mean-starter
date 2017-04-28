@@ -1,6 +1,6 @@
 <div ui-view>
   <div class="blog-box-wrapper">
-    <div class="blog-box new button" ng-click="newBlog()">New Post</div>
+    <div class="blog-box new button" ng-click="newPost()">New Post</div>
     <div class="blog-box button" ng-repeat="blog in blogs">
       <div class="blog-info" ng-click="showDetails(blog)">
         <h3>{{blog.title}}</h3>
@@ -8,8 +8,8 @@
         <p class="date">Last updated: {{blog.lastUpdated | date}}</p>
       </div>
       <div class="blog-actions">
-        <div class="edit button" ng-click="editBlog(blog)">Edit</div>
-        <div class="delete button" ng-click="deleteBlog(blog, $index)">Delete</div>
+        <div class="edit button" ng-click="editPost(blog)">Edit</div>
+        <div class="delete button" ng-click="deletePost(blog, $index)">Delete</div>
       </div>
     </div>
   </div>

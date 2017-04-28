@@ -8,6 +8,7 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
+    background: lightgray;
 }
 
 section {
@@ -46,7 +47,6 @@ ul li {
 
 .content {
     display: flex;
-    background: lightgray;
     flex-direction: column;
     flex: 1;
 }
@@ -102,4 +102,10 @@ ul li {
 
 .button:hover {
     cursor: pointer;
+}
+
+.blog-edit {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
 }

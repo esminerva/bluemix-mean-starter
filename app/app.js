@@ -9,6 +9,10 @@ angular.module('app', ['ui.router', 'ngResource'])
       templateUrl: '/blogs/index.html',
       controller: 'blogsController'
     })
+    .state('blogs.new', {
+      url: '/new',
+      templateUrl: '/blogs/edit.html'
+    })
     .state('blogs.details', {
       url: '/:id',
       templateUrl: '/blogs/details.html'

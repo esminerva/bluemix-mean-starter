@@ -6,7 +6,14 @@ angular.module('app')
   if($state.params.id) {
     $scope.blog = new Blogs({_id: $state.params.id});
     $scope.blog.$get();
+  } else if($state.is('blogs.new')) {
+    $scope.blog = new Blogs();
   }
+
+  $scope.newPost = function() {
+    $scope.blog = new Blogs();
+    $state.go('blogs.new');
+  };
 
   $scope.showDetails = function(blog) {
     $scope.blog = blog;
@@ -18,7 +25,7 @@ angular.module('app')
     $state.go('blogs.edit', {id: blog._id});
   };
 
-  $scope.deleteBlog = function(blog, index) {
+  $scope.deletePost = function(blog, index) {
     blog.$delete()
       .then(function success() {
         if(index || index > -1) {
@@ -29,5 +36,23 @@ angular.module('app')
       }, function error() {
         $scope.errorMessage = 'Failed to delete blog post';
       });
-  }
+  };
+
+  $scope.submitUpdate = function() {
+    if($scope.blog._id) {
+      $scope.blog.$update()
+        .then(function success() {
+          $state.go('blogs.details', {id: $scope.blog._id});
+        }, function error() {
+
+        });
+    } else {
+      $scope.blog.$save()
+        .then(function success() {
+          $state.go('blogs', {}, {reload: true});
+        }, function error() {
+
+        });
+    }
+  };
 });
