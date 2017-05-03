@@ -1,5 +1,14 @@
-angular.module('app')
-.controller('blogsController', function($scope, Blogs, $state) {
+'use strict';
+
+function blogsModel($resource) {
+  return $resource('/api/blogs/:id', {id:'@_id'}, {
+    update: {
+      method: 'PUT'
+    }
+  });
+}
+
+function blogsController($scope, Blogs, $state) {
   $scope.blogs = Blogs.query();
   $scope.Date = Date;
 
@@ -55,4 +64,9 @@ angular.module('app')
         });
     }
   };
-});
+}
+
+module.exports = {
+  model: blogsModel,
+  controller: blogsController
+};

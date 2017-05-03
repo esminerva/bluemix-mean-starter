@@ -1,3 +1,10 @@
+'use strict';
+
+// Import files for webpack to package
+require('./app.scss');
+import angular from 'angular';
+var blogs = require('./blogs/blogs');
+
 angular.module('app', ['ui.router', 'ngResource'])
 .config(function config($stateProvider) {
   $stateProvider
@@ -21,4 +28,5 @@ angular.module('app', ['ui.router', 'ngResource'])
       url: '/:id/edit',
       templateUrl: '/blogs/edit.html'
     });
-});
+}).controller('blogsController', blogs.controller)
+  .factory('Blogs', blogs.model);

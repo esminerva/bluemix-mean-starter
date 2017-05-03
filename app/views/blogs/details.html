@@ -1,0 +1,10 @@
+<div class="blog-details">
+  <h3>{{blog.title}}</h3>
+  <p>Date: {{blog.timeCreated | date}}</p>
+  <p class="blog-content">{{blog.content}}</p>
+  <div class="blog-footer">
+    <p>Last updated: {{blog.lastUpdated | date}}</p>
+    <div class="bx--link button" ng-click="editPost(blog)">Edit</div>
+    <div class="bx--link button" ng-click="deletePost(blog)">Delete</div>
+  </div>
+</div>

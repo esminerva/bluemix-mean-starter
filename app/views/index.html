@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <title>Bluemix MEAN Starter</title>
+    <link rel="stylesheet" href="/css/app.bundle.css">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.4/angular-resource.min.js"></script>
+    <script src="/js/app.bundle.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="header-section">
+      <div class="header">
+        <h1 class="button header-title" ui-sref="home">Bluemix MEAN Starter</h1>
+      </div>
+      <ul>
+        <li class="button" ui-sref="blogs" ui-sref-opts="{reload: true}" ui-sref-active="selected">Blog</li>
+      </ul>
+    </div>
+    <div ui-view class="content">
+      <div class="homepage">^ Click on Blog to test CRUD operations in this MEAN Application</div>
+    </div>
+  </body>
+</html>

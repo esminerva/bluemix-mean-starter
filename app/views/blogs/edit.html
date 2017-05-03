@@ -1,0 +1,15 @@
+<div class="blog-edit">
+  <h2 ng-if="'blogs.new' | isState">New Entry</h2>
+  <div class="bx--form-item">
+    <label for="title" class="bx--label">Title</label>
+    <input id="title" type="text" class="bx--text-input" placeholder="My blog title" ng-model="blog.title">
+  </div>
+  <div class="bx--form-item">
+    <label for="content" class="bx--label">Content</label>
+    <textarea id="content" class="bx--text-area" rows="20" placeholder="My blog content" ng-model="blog.content"></textarea>
+  </div>
+  <div class="bx--form-item buttons">
+    <button class="bx--btn bx--btn--primary" type="button" ng-click="submitUpdate()">Submit</button>
+    <button class="bx--btn bx--btn--primary delete" type="button" ng-if="blog._id" ng-click="deletePost(blog)">Delete</button>
+  </div>
+</div>

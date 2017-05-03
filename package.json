@@ -8,6 +8,8 @@
   },
   "scripts": {
     "start": "node server.js",
+    "build": "webpack",
+    "watchbuild": "webpack --debug --devtool source-map --watch --display-error-details",
     "debug": "node --nolazy --debug-brk=5858 server.js"
   },
   "dependencies": {
@@ -17,5 +19,15 @@
     "express": "^4.14.0",
     "express-session": "^1.15.0",
     "mongodb": "^2.2.26"
+  },
+  "devDependencies": {
+    "carbon-components": "^7.3.11",
+    "carbon-icons": "^5.1.2",
+    "css-loader": "^0.28.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.17.0",
+    "webpack": "^2.4.1"
   }
 }

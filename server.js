@@ -1,3 +1,5 @@
+'use strict';
+
 const cfenv = require('cfenv');
 const express = require('express');
 const bodyParser = require("body-parser");
@@ -18,7 +20,8 @@ require('appmetrics-dash').attach();
 
 
 // Define public endpoints
-app.use(express.static(__dirname + '/app'));
+app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/app/views'));
 
 
 // Connect to mongo
@@ -45,6 +48,7 @@ mongodb.MongoClient.connect(appEnv.getServiceURL(/Compose for MongoDB/), (err, d
 app.post('/api/blogs', (req, res) => {
   if(!req.body || !req.body.title || !req.body.content) {
     res.status(400).send('title and content are required');
+    return;
   }
 
   let timestamp = new Date();
