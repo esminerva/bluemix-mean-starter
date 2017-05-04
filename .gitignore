@@ -2,3 +2,4 @@ node_modules/
 vcap-local.js
 .idea
 *.bundle.*
+*.log
